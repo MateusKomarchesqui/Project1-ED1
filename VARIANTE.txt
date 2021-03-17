@@ -1,0 +1,3 @@
+Implementado com o metodo original de manipulação do TP e TPR, retângulos 
+que não possuem nenhuma sobreposição não aparecem no .svg de saida
+entretanto são considerados nas demais operações subsequentes.
