@@ -43,7 +43,7 @@ bool fileRead(char *type, StdList Stdlist, VAR var) {
     
     if (!strcmp(type, "geo")) {
 
-        char *BED_FileGeo = calloc(strlen(getARG_PathBED_geo(var)) + strlen(getARG_geo(var)) + 6, sizeof(char));
+        char *BED_FileGeo = calloc(strlen(getARG_PathBED_geo(var)) + strlen(getARG_geo(var)) + 100, sizeof(char));
         if (strcmp(getARG_PathBED_geo(var), "\0")) sprintf(BED_FileGeo, "%s/%s.geo", getARG_PathBED_geo(var), getARG_geo(var));
         else  sprintf(BED_FileGeo, "%s.geo", getARG_geo(var));
         
@@ -110,7 +110,7 @@ bool fileRead(char *type, StdList Stdlist, VAR var) {
 
     }else if (!strcmp(type, "qry")){
 
-        char *BED_FileQry = calloc(strlen(getARG_PathBED_qry(var)) + strlen(getARG_qry(var)) + 6, sizeof(char));
+        char *BED_FileQry = calloc(strlen(getARG_PathBED_qry(var)) + strlen(getARG_qry(var)) + 100, sizeof(char));
         if (strcmp(getARG_PathBED_qry(var), "\0")) sprintf(BED_FileQry, "%s/%s.qry", getARG_PathBED_qry(var), getARG_qry(var));
         else  sprintf(BED_FileQry, "%s.qry", getARG_qry(var));
         FILE *file = fopen(BED_FileQry, "r");
@@ -175,7 +175,7 @@ bool fileRead(char *type, StdList Stdlist, VAR var) {
 /*                  cityOfRectangles                  */
 void getNXfromgeo(VAR var) {
 
-    char *BED_FileGeo = calloc(strlen(getARG_PathBED_geo(var)) + strlen(getARG_geo(var)) + 6, sizeof(char));
+    char *BED_FileGeo = calloc(strlen(getARG_PathBED_geo(var)) + strlen(getARG_geo(var)) + 100, sizeof(char));
     if (strcmp(getARG_PathBED_geo(var), "\0")) sprintf(BED_FileGeo, "%s/%s.geo", getARG_PathBED_geo(var), getARG_geo(var));
     else  sprintf(BED_FileGeo, "%s.geo", getARG_geo(var));
     
@@ -227,7 +227,7 @@ void cityOfRectangles(VAR var) {
 /*                  Geo svg printing                  */
 void GEOSvgPrint(StdList Stdlist, VAR var) {
 
-    char *Path = calloc(strlen(getARG_geo(var)) + strlen(getARG_PathBSD(var)) + 10, sizeof(char));
+    char *Path = calloc(strlen(getARG_geo(var)) + strlen(getARG_PathBSD(var)) + 100, sizeof(char));
     if (strcmp(getARG_PathBSD(var), "\0")) sprintf(Path, "%s/%s.svg", getARG_PathBSD(var), getARG_geo(var));
     else  sprintf(Path, "%s.svg", getARG_geo(var));
     
@@ -256,7 +256,7 @@ void GEOSvgPrint(StdList Stdlist, VAR var) {
 /*                  Qry svg printing                  */
 void QRYSvgPrint(StdList Stdlist, VAR var) { 
 
-    char *BED_FileQry = calloc(strlen(getARG_PathBED(var)) + strlen(getARG_qry(var)) + 10, sizeof(char));
+    char *BED_FileQry = calloc(strlen(getARG_PathBED(var)) + strlen(getARG_qry(var)) + 100, sizeof(char));
     if (strcmp(getARG_PathBED_qry(var), "\0")) sprintf(BED_FileQry, "%s/%s.qry", getARG_PathBED_qry(var), getARG_qry(var));
     else  sprintf(BED_FileQry, "%s.qry", getARG_qry(var));
 
@@ -283,7 +283,7 @@ void QRYSvgPrint(StdList Stdlist, VAR var) {
     }
 
 
-    char *tempQRY = calloc(strlen(getARG_PathBSD(var)) + strlen("tempQRY") + 10, sizeof(char));
+    char *tempQRY = calloc(strlen(getARG_PathBSD(var)) + strlen("tempQRY") + 100, sizeof(char));
     if (strcmp(getARG_PathBSD(var), "\0")) sprintf(tempQRY, "%s/%s.txt", getARG_PathBSD(var), "tempQRY");
     else  sprintf(tempQRY, "%s.txt", "tempQRY");
     FILE *tempQRYsvg = fopen(tempQRY, "r");
